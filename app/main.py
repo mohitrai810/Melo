@@ -5,9 +5,7 @@ import uuid
 import os
 
 app = FastAPI()
-
-# Load TTS model once on startup
-tts = TTS(model_name="tts_models/multilingual/multi-dataset", progress_bar=False)
+tts = TTS(model_name="tts_models/multilingual/ljspeech/tacotron2-DDC", progress_bar=False)
 
 @app.post("/speak")
 async def speak(text: str = Form(...)):
